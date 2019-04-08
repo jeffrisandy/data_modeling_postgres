@@ -59,7 +59,7 @@ def process_log_file(cur, filepath):
             songid, artistid = None, None
 
         # insert songplay record
-        songplay_data = (index, row.ts, row.userId, row.level, songid, artistid, row.sessionId,\
+        songplay_data = (row.ts, row.userId, row.level, songid, artistid, row.sessionId,\
                     row.location, row.userAgent)
         cur.execute(songplay_table_insert, songplay_data)
 
@@ -84,11 +84,15 @@ def process_data(cur, conn, filepath, func):
 
 
 def main():
+    
+    create_tables.main()
+    
     conn = psycopg2.connect("host=127.0.0.1 dbname=sparkifydb user=student password=student")
     cur = conn.cursor()
     
     # create tables
-    create_tables.create_tables(cur, conn)
+    #create_tables.create_tables(cur, conn)
+    
 
     process_data(cur, conn, filepath='data/song_data', func=process_song_file)
     process_data(cur, conn, filepath='data/log_data', func=process_log_file)

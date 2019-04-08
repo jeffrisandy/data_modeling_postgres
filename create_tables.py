@@ -37,8 +37,13 @@ def create_tables(cur, conn):
 def main():
     cur, conn = create_database()
     
+    try:
+        drop_tables(cur, conn)
+    except:
+        conn.rollback()
+        
     create_tables(cur, conn)
-    drop_tables(cur, conn)
+    
 
     conn.close()
 
