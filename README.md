@@ -58,19 +58,24 @@ To check the result, open and run cells in `test.ipynb`
 
 The result should be like the below screenshot.
 
-`Songplay Table`
+**Songplay Table**
+
 <img src="/img/songplay_table_example.png">
 
-`Users Table`
+**Users Table**
+
 <img src="/img/user_table_example.png">
 
-`Artists Table`
+**Artists Table**
+
 <img src="/img/artist_table_example.png">
 
-`Songs Table`
+**Songs Table**
+
 <img src="/img/song_table_example.png">
 
-`Time Table`
+**Time Table**
+
 <img src="/img/time_table_example.png">
 
 ## File Descriptions <a name="files"></a>
@@ -87,7 +92,7 @@ The files consist of :
 - `test.ipynb` displays the first few rows of each table to let you check your database.
 - `create_tables.py` drops and creates your tables. Run this file to reset tables before each time running ETL scripts.
 - `etl.ipynb` reads and processes a single file from song_data and log_data and loads the data into your tables.
-- `etl.py` reads and processes files from song_data and log_data and loads them into your tables. 
+- `etl.py` reads and processes files from song_data and log_data and loads them into your tables.
 - `sql_queries.py` contains all sql queries, and is imported into the last three files above.
 
 
