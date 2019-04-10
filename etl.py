@@ -81,7 +81,7 @@ def process_log_file(cur, filepath):
 
 
 def process_data(cur, conn, filepath, func):
-     """
+    """
     This function is process all song & log files
     INPUT :
         cur : a cursor object
